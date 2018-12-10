@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CrowdinProject index{% endblock %}
+
+{% block body %}
+    <h1>CrowdinProject index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>User</th>
+                <th>BaseLang</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for crowdin_project in crowdin_projects %}
+            <tr>
+                <td>{{ crowdin_project.id }}</td>
+                <td>{{ crowdin_project.Name }}</td>
+                <td>{{ crowdin_project.User }}</td>
+                <td>{{ crowdin_project.BaseLang }}</td>
+                <td>{{ crowdin_project.Content }}</td>
+                <td>
+                    <a href="{{ path('crowdin_project_show', {'id': crowdin_project.id}) }}">show</a>
+                    <a href="{{ path('crowdin_project_edit', {'id': crowdin_project.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('crowdin_project_new') }}">Create new</a>
+{% endblock %}

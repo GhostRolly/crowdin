@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CrowdinProject{% endblock %}
+
+{% block body %}
+    <h1>Edit CrowdinProject</h1>
+
+    {{ include('crowdin_project/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('crowdin_project_index') }}">back to list</a>
+
+    {{ include('crowdin_project/_delete_form.html.twig') }}
+{% endblock %}

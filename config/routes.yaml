@@ -1,0 +1,14 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+login:
+  path: /
+  controller: App\Controller\Crowdin::index
+  defaults:
+      template: 'login_page.html.twig'
+
+app_intro:
+  path: /intro/
+  controller: App\Controller\Crowdin::intro
